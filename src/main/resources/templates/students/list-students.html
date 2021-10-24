@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="layouts::header"></head>
+
+<body>
+<nav th:replace="layouts::navbar"></nav>
+    <div class="container">
+        <h3>学生列表</h3>
+        <hr>
+<!--        新增学生按钮-->
+        <a th:href="@{/students/new}" class="btn btn-primary btn-sm mb-3">新增学生</a>
+        <br>
+        <table class="table table-bordered table-striped">
+            <thead class="thead-dark">
+                <tr>
+                    <th>学生姓名</th>
+                    <th>微信号</th>
+                    <th>邮箱</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr th:each="aStudent : ${students}">
+                    <td th:text="${aStudent.name}"></td>
+                    <td th:text="${aStudent.wechatId}"></td>
+                    <td th:text="${aStudent.email}"></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+</body>
+
+</html>
