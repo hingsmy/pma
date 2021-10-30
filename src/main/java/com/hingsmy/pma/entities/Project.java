@@ -1,9 +1,8 @@
 package com.hingsmy.pma.entities;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
+import java.util.List;
+
 
 @Entity
 public class Project {
@@ -14,6 +13,9 @@ public class Project {
     private String name;
     private String stage; // 未开始,已完成,进行中
     private String description;
+
+    @OneToMany(mappedBy = "theProject")
+    private List<Student> students;
 
     public Project() {
     }
