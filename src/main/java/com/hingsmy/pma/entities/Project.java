@@ -1,6 +1,7 @@
 package com.hingsmy.pma.entities;
 
 import javax.persistence.*;
+import java.util.ArrayList;
 import java.util.List;
 
 
@@ -76,6 +77,14 @@ public class Project {
 
     public void setDescription(String description) {
         this.description = description;
+    }
+
+
+    public void addStudent(Student student) {
+        if (this.students == null) {
+            this.students = new ArrayList<>();
+        }
+        this.students.add(student);
     }
 
     @Override
