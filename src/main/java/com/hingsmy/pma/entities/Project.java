@@ -14,7 +14,7 @@ public class Project {
     private String stage; // 未开始,已完成,进行中
     private String description;
 
-    @OneToMany(mappedBy = "theProject")
+    @OneToMany(mappedBy = "project")
     private List<Student> students;
 
     public Project() {
@@ -24,6 +24,14 @@ public class Project {
         this.name = name;
         this.stage = stage;
         this.description = description;
+    }
+
+    public List<Student> getStudents() {
+        return students;
+    }
+
+    public void setStudents(List<Student> students) {
+        this.students = students;
     }
 
     public long getProjectId() {

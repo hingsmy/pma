@@ -13,9 +13,16 @@ public class Student {
     private String wechatId;
     private String email;
 
-    @ManyToOne
+    @ManyToOne(
+            cascade = {
+                    CascadeType.DETACH,
+                    CascadeType.MERGE,
+                    CascadeType.REFRESH,
+                    CascadeType.PERSIST},
+            fetch = FetchType.LAZY
+    )
     @JoinColumn(name = "project_id")
-    private Project theProject;
+    private Project project;
 
     public Student() {
     }
@@ -24,6 +31,14 @@ public class Student {
         this.name = name;
         this.wechatId = wechatId;
         this.email = email;
+    }
+
+    public Project getProject() {
+        return project;
+    }
+
+    public void setProject(Project project) {
+        this.project = project;
     }
 
     public long getStudentId() {
