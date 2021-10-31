@@ -47,12 +47,6 @@ public class ProjectController {
 
         // 处理保存到数据库的行为
         projectRepository.save(project);
-        Iterable<Student> chosenStudents = studentRepository.findAllById(students);
-
-        for (Student student : chosenStudents) {
-            student.setProject(project);
-            studentRepository.save(student);
-        }
 
         // 使用重定位防止重复提交
         return "redirect:/projects/new";
