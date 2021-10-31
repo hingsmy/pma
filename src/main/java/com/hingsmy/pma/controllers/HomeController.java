@@ -2,6 +2,7 @@ package com.hingsmy.pma.controllers;
 
 import com.hingsmy.pma.dao.ProjectRepository;
 import com.hingsmy.pma.dao.StudentRepository;
+import com.hingsmy.pma.dto.StudentProject;
 import com.hingsmy.pma.entities.Project;
 import com.hingsmy.pma.entities.Student;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -26,8 +27,8 @@ public class HomeController {
         List<Project> projects = projectRepository.findAll();
         model.addAttribute("projects", projects);
 
-        List<Student> students = studentRepository.findAll();
-        model.addAttribute("students", students);
+        List<StudentProject> studentProjects = studentRepository.studentProjects();
+        model.addAttribute("studentProjects", studentProjects);
 
         return "main/home";
     }
