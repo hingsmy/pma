@@ -51,6 +51,6 @@ public class ProjectController {
         projectService.save(project);
 
         // 使用重定位防止重复提交
-        return "redirect:/projects/new";
+        return "redirect:/projects";
     }
 }

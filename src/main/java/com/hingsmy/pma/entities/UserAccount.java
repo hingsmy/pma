@@ -11,7 +11,7 @@ public class UserAccount {
     @SequenceGenerator(name="user_accounts_seq",sequenceName="user_accounts_seq", allocationSize = 1)
     private long userId;
 
-    @Column(name = "userName")
+    @Column(name = "username")
     private String userName;
 
     private String email;

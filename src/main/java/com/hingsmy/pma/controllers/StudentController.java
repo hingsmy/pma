@@ -41,6 +41,6 @@ public class StudentController {
         // 使用student crudRepository保存到数据库
         studentService.save(student);
 
-        return "redirect:/students/new";
+        return "redirect:/students";
     }
 }
